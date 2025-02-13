@@ -3,73 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Santosh</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <title>Valentine Proposal ❤️</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
+            justify-content: center;
+            background: linear-gradient(45deg, #ff85a2, #ff3366);
             margin: 0;
-            flex-direction: column;
         }
-
-        .container {
+        .heart-shower {
+            position: fixed;
+            top: -50px;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            color: #ff3366;
+            font-size: 24px;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        .proposal-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
+            margin: 20px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .btn-yes, .btn-no {
+            font-size: 1.25rem;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 50px;
+            transition: transform 0.3s;
+        }
+        .btn-yes {
+            background-color: #ff3366;
+            color: #fff;
+        }
+        .btn-yes:hover {
+            transform: scale(1.1);
+        }
+        .btn-no {
+            background-color: #333;
+            color: #fff;
+            position: relative;
+        }
+        .hidden-content {
+            display: none;
+            margin: 20px;
             text-align: center;
         }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .proposal-image {
+            max-width: 300px;
+            border-radius: 20px;
+            margin: 20px auto;
         }
-
-        .football-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .football {
-            width: 100px;
-            height: 100px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg');
-            background-size: cover;
-            border-radius: 50%;
-            animation: spin 2s linear infinite;
-        }
-
-        .messi {
-            width: 150px;
-            height: 150px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg');
-            background-size: cover;
-            border-radius: 50%;
-            border: 5px solid #fff;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
+        /* Mobile view adjustments: align content to the top */
+        @media (max-width: 768px) {
+            body {
+                align-items: flex-start;
+                padding-top: 20px;
             }
-            100% {
-                transform: rotate(360deg);
+            .proposal-container {
+                width: 95%;
+                padding: 2rem !important;
+            }
+            h1.display-4 {
+                font-size: 2rem !important;
             }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>Hello From Santosh</h1>
-    <div class="football-container">
-        <div class="football"></div>
-        <div class="messi"></div>
+<div class="heart-shower"></div>
+
+<div class="container proposal-container">
+    <h1 class="display-4 mb-4">Will you be my Valentine? 🌹❤️</h1>
+    <div class="button-container position-relative">
+        <button class="btn btn-yes btn-lg mx-2" onclick="showResponse(true)">Yes ❤️</button>
+        <button class="btn btn-no btn-lg mx-2" id="noBtn" onclick="handleNo()">No 😈</button>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<div class="container hidden-content">
+    <img src="/assets/propose.png" alt="Proposal" class="proposal-image">
+    <img src="/assets/mar.png" alt="Proposal" class="proposal-image">
+    <h2 class="text-danger mt-3">You've made me the happiest person! 💍<br>I promise to love you forever! 🌟</h2>
+    <p class="h4 mt-3">❤️ You are my everything! ❤️</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Create falling hearts
+    function createHearts() {
+        const heartShower = document.querySelector('.heart-shower');
+        for (let i = 0; i < 50; i++) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            heartShower.appendChild(heart);
+        }
+    }
+
+    let noCount = 0;
+    const messages = [
+        ['Are you sure? 😟', 'No 😈', 'Yes ❤️'],
+        ['Last chance! 😭', 'No 😈', 'Yes ❤️'],
+        ['Please don\'t say no! 🥺', 'Yes ❤️']
+    ];
+
+    function showResponse(yes) {
+        if (yes) {
+            document.querySelector('.proposal-container').style.display = 'none';
+            document.querySelector('.hidden-content').style.display = 'block';
+        }
+    }
+
+    function moveButton(btn) {
+        const container = btn.parentElement;
+        const containerRect = container.getBoundingClientRect();
+        const btnRect = btn.getBoundingClientRect();
+        const maxX = containerRect.width - btnRect.width;
+        const maxY = containerRect.height - btnRect.height;
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+        btn.style.position = 'absolute';
+        btn.style.left = randomX + 'px';
+        btn.style.top = randomY + 'px';
+        btn.style.transition = 'all 0.3s';
+    }
+
+    function handleNo() {
+        const btn = document.getElementById('noBtn');
+        noCount++;
+        if (noCount < 3) {
+            btn.innerHTML = `${messages[noCount-1][0]}
+          <button class="btn btn-no m-1" onclick="handleNo()">${messages[noCount-1][1]}</button>
+          <button class="btn btn-yes m-1" onclick="showResponse(true)">${messages[noCount-1][2]}</button>`;
+        } else {
+            // For mobile-friendly movement
+            moveButton(btn);
+            btn.addEventListener('mouseover', () => moveButton(btn));
+            btn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                moveButton(btn);
+            });
+            btn.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    moveButton(btn);
+                }
+            });
+        }
+    }
+
+    createHearts();
+</script>
 </body>
 </html>
