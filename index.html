@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shantos Bhusal</title>
     <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --panel-bg: #141414;
+            --left-panel-bg: #1d2b6b;
+            --item-bg: #243175;
+            --item-hover-bg: #2a3a8c;
+            --accent-color: #6c5ce7;
+        }
+
+        .light-mode {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --panel-bg: #f0f0f0;
+            --left-panel-bg: #e0e0ff;
+            --item-bg: #d0d0ff;
+            --item-hover-bg: #b0b0ff;
+            --accent-color: #4834d4;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,35 +33,37 @@
         }
 
         body {
-            background-color: #1a1a1a;
-            color: #fff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .dashboard {
             width: 100%;
             max-width: 1200px;
-            min-height: 600px;
-            background-color: #141414;
+            background-color: var(--panel-bg);
             border-radius: 20px;
             display: grid;
             grid-template-columns: 300px 1fr 300px;
             padding: 20px;
             gap: 20px;
             position: relative;
+            transition: background-color 0.3s;
         }
 
         .left-panel {
-            background-color: #1d2b6b;
+            background-color: var(--left-panel-bg);
             border-radius: 15px;
             padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 20px;
+            transition: background-color 0.3s;
         }
 
         .profile-section {
@@ -52,12 +74,13 @@
             width: 100%;
             max-width: 200px;
             height: 120px;
-            background-color: #0f1642;
+            background-color: var(--item-bg);
             border-radius: 10px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background-color 0.3s;
         }
 
         .avatar img {
@@ -89,7 +112,7 @@
         .menu-item {
             padding: 12px;
             margin: 8px 0;
-            background-color: #243175;
+            background-color: var(--item-bg);
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -98,13 +121,15 @@
         }
 
         .menu-item:hover {
-            background-color: #2a3a8c;
+            background-color: var(--item-hover-bg);
         }
 
         .center-panel {
             display: flex;
             flex-direction: column;
             gap: 20px;
+            overflow-y: auto;
+            max-height: 80vh;
         }
 
         .social-icons {
@@ -117,13 +142,13 @@
         .social-icon {
             width: 50px;
             height: 50px;
-            background-color: #1f1f1f;
+            background-color: var(--item-bg);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
         }
 
         .social-icon:hover {
@@ -131,41 +156,40 @@
         }
 
         .portfolio-section {
-            flex-grow: 1;
-            background-color: #1f1f1f;
+            background-color: var(--item-bg);
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
             padding: 20px;
             text-align: center;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
         }
 
         .portfolio-nav {
-            position: absolute;
-            bottom: 20px;
             display: flex;
+            justify-content: center;
             gap: 10px;
+            margin-top: 20px;
         }
 
         .nav-btn {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #2a2a2a;
+            background-color: var(--item-hover-bg);
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text-color);
+            transition: background-color 0.3s;
         }
 
         .right-panel {
-            background-color: #1f1f1f;
+            background-color: var(--item-bg);
             border-radius: 15px;
             padding: 20px;
+            transition: background-color 0.3s;
         }
 
         .projects-grid {
@@ -177,13 +201,13 @@
 
         .project-item {
             aspect-ratio: 1;
-            background-color: #2a2a2a;
+            background-color: var(--item-hover-bg);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
         }
 
         .project-item:hover {
@@ -191,22 +215,51 @@
         }
 
         .stats-counter {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: #2a2a2a;
+            background-color: var(--item-hover-bg);
             padding: 15px;
             border-radius: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
             font-size: 14px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
         }
 
         .counter-value {
-            color: #6c5ce7;
+            color: var(--accent-color);
             font-size: 24px;
             font-weight: bold;
+        }
+
+        .bio-section, .interests-section {
+            background-color: var(--item-bg);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .interest-item {
+            background-color: var(--item-hover-bg);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .interest-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         @keyframes float {
@@ -219,6 +272,33 @@
             animation: float 3s ease-in-out infinite;
         }
 
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--item-bg);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .music-note {
+            display: inline-block;
+            animation: float 2s ease-in-out infinite, spin 4s linear infinite;
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             .dashboard {
@@ -228,7 +308,8 @@
 
         @media (max-width: 992px) {
             .dashboard {
-                grid-template-columns: 220px 1fr 220px;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
             }
             .menu-item {
                 font-size: 12px;
@@ -244,41 +325,17 @@
 
         @media (max-width: 768px) {
             .dashboard {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto;
-                height: auto;
-                min-height: auto;
+                padding: 10px;
             }
-            .left-panel {
-                order: 1;
+            .left-panel, .center-panel, .right-panel {
+                order: unset;
             }
             .center-panel {
-                order: 2;
+                max-height: none;
+                overflow-y: visible;
             }
-            .right-panel {
-                order: 3;
-            }
-            .stats-counter {
-                position: relative;
-                bottom: auto;
-                right: auto;
-                margin-top: 20px;
-                justify-content: center;
-            }
-            .portfolio-section {
-                min-height: 300px;
-            }
-            .menu-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 10px;
-                margin-top: 10px;
-            }
-            .menu-item {
-                margin: 0;
-            }
-            .projects-grid {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            .interests-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -300,36 +357,31 @@
                 width: 40px;
                 height: 40px;
             }
-            .portfolio-section {
-                min-height: 200px;
+            .interests-grid {
+                grid-template-columns: 1fr;
             }
-            .stats-counter {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            .dashboard {
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="dashboard">
+        <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
         <div class="left-panel">
             <div class="profile-section">
                 <div class="avatar">
-                    <img src=""Logo" class="floating">
+                    <img src="" alt="Logo" class="floating">
                 </div>
                 <button class="contact-btn">CONTACT ME</button>
             </div>
             <ul class="menu-list">
                 <li class="menu-item">SOFTWARE DEVELOPER</li>
-                <li class="menu-item">FOOTBALL </li>
-                <li class="menu-item">MUSIC</li>
+                <li class="menu-item">FOOTBALL ENTHUSIAST</li>
+                <li class="menu-item">MUSIC LOVER</li>
+                <li class="menu-item">WEBFLOW EXPERT</li>
             </ul>
         </div>
         
@@ -338,12 +390,41 @@
                 <div class="social-icon">𝕏</div>
                 <div class="social-icon">in</div>
                 <div class="social-icon">Be</div>
+                <div class="social-icon">Gh</div>
+            </div>
+            <div class="bio-section">
+                <h2>About Me</h2>
+                <p>Hello! I'm a passionate software developer hailing from Dang, Deukhuri. With a love for coding, football, and music, I bring a unique blend of technical skills and creative energy to every project.</p>
             </div>
             <div class="portfolio-section">
                 <h2>BROWSE MY PORTFOLIO</h2>
                 <div class="portfolio-nav">
                     <button class="nav-btn">←</button>
                     <button class="nav-btn">→</button>
+                </div>
+            </div>
+            <div class="interests-section">
+                <h2>My Interests</h2>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <img src="https://via.placeholder.com/150x150.png?text=Coding" alt="Software Development">
+                        <h3>Software Development</h3>
+                        <p>Building innovative solutions</p>
+                    </div>
+                    <div class="interest-item">
+                        <img src="https://via.placeholder.com/150x150.png?text=Messi" alt="Messi">
+                        <h3>Football</h3>
+                        <p>Passionate about the beautiful game</p>
+                    </div>
+                    <div class="interest-item">
+                        <h3>Music</h3>
+                        <p>Exploring diverse genres</p>
+                        <div class="music-note">🎵</div>
+                    </div>
+                    <div class="interest-item">
+                        <h3>Web Design</h3>
+                        <p>Crafting beautiful user experiences</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -356,15 +437,14 @@
                 <div class="project-item">∞</div>
                 <div class="project-item">VS</div>
             </div>
-        </div>
-
-        <div class="stats-counter">
-            <span>Shantos Bhusal</span>
+            <div class="stats-counter">
+                <span>SHANTOS BHUSAL</span>
+            </div>
         </div>
     </div>
 
     <script>
-        document.querySelectorAll('.menu-item, .social-icon, .project-item').forEach(item => {
+        document.querySelectorAll('.menu-item, .social-icon, .project-item, .interest-item').forEach(item => {
             item.addEventListener('mouseenter', () => {
                 item.style.transform = 'scale(1.05)';
             });
@@ -392,6 +472,7 @@
             const portfolio = document.querySelector('.portfolio-section h2');
             portfolio.style.opacity = 0;
             setTimeout(() => {
+                portfolio.textContent = `Portfolio - Slide ${currentSlide + 1}`;
                 portfolio.style.opacity = 1;
             }, 300);
         }
@@ -403,6 +484,28 @@
                 contactBtn.style.transform = 'scale(1)';
             }, 100);
         });
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.textContent = document.body.classList.contains('light-mode') ? '🌙' : '🌓';
+        });
+
+        // Animated computer for software development section
+        const softwareItem = document.querySelector('.interest-item:first-child img');
+        softwareItem.src = 'https://via.placeholder.com/150x150.png?text=💻';
+        softwareItem.classList.add('floating');
+
+        // Messi image for football section
+        const footballItem = document.querySelector('.interest-item:nth-child(2) img');
+        footballItem.src = 'https://via.placeholder.com/150x150.png?text=⚽Messi';
+
+        // Music animation
+        const musicNote = document.querySelector('.music-note');
+        setInterval(() => {
+            musicNote.style.transform = `translateY(${Math.random() * 20 - 10}px) rotate(${Math.random() * 360}deg)`;
+        }, 1000);
     </script>
 </body>
 </html>
