@@ -19,11 +19,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         .dashboard {
-            width: 1200px;
-            height: 600px;
+            width: 100%;
+            max-width: 1200px;
+            min-height: 600px;
             background-color: #141414;
             border-radius: 20px;
             display: grid;
@@ -47,7 +49,8 @@
         }
 
         .avatar {
-            width: 200px;
+            width: 100%;
+            max-width: 200px;
             height: 120px;
             background-color: #0f1642;
             border-radius: 10px;
@@ -70,6 +73,8 @@
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.2s;
+            width: 100%;
+            max-width: 200px;
         }
 
         .contact-btn:hover {
@@ -88,6 +93,8 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-size: 14px;
+            text-align: center;
         }
 
         .menu-item:hover {
@@ -104,6 +111,7 @@
             display: flex;
             gap: 10px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .social-icon {
@@ -130,6 +138,8 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            padding: 20px;
+            text-align: center;
         }
 
         .portfolio-nav {
@@ -190,6 +200,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 14px;
         }
 
         .counter-value {
@@ -207,6 +218,103 @@
         .floating {
             animation: float 3s ease-in-out infinite;
         }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .dashboard {
+                grid-template-columns: 250px 1fr 250px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .dashboard {
+                grid-template-columns: 220px 1fr 220px;
+            }
+            .menu-item {
+                font-size: 12px;
+                padding: 10px;
+            }
+            .stats-counter {
+                font-size: 12px;
+            }
+            .counter-value {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                height: auto;
+                min-height: auto;
+            }
+            .left-panel {
+                order: 1;
+            }
+            .center-panel {
+                order: 2;
+            }
+            .right-panel {
+                order: 3;
+            }
+            .stats-counter {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 20px;
+                justify-content: center;
+            }
+            .portfolio-section {
+                min-height: 300px;
+            }
+            .menu-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .menu-item {
+                margin: 0;
+            }
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .dashboard {
+                padding: 10px;
+                gap: 10px;
+            }
+            .menu-list {
+                grid-template-columns: 1fr;
+            }
+            .social-icons {
+                gap: 5px;
+            }
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .portfolio-section {
+                min-height: 200px;
+            }
+            .stats-counter {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            .dashboard {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            }
+        }
     </style>
 </head>
 <body>
@@ -214,7 +322,7 @@
         <div class="left-panel">
             <div class="profile-section">
                 <div class="avatar">
-                    <img src="https://www.instagram.com/shantosbhusal/p/DCbpUSoSZkD/" alt="Logo" class="floating">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/louis-KMaYLPljTR5Obk4e5Mz7JY1FSMuzNS.png" alt="Logo" class="floating">
                 </div>
                 <button class="contact-btn">CONTACT ME</button>
             </div>
@@ -257,7 +365,6 @@
     </div>
 
     <script>
-        // Add hover effects and interactivity
         document.querySelectorAll('.menu-item, .social-icon, .project-item').forEach(item => {
             item.addEventListener('mouseenter', () => {
                 item.style.transform = 'scale(1.05)';
@@ -268,15 +375,14 @@
             });
         });
 
-        // Portfolio navigation
         let currentSlide = 0;
         const totalSlides = 3;
         
         document.querySelectorAll('.nav-btn').forEach((btn, index) => {
             btn.addEventListener('click', () => {
-                if (index === 0) { // Previous
+                if (index === 0) {
                     currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                } else { // Next
+                } else {
                     currentSlide = (currentSlide + 1) % totalSlides;
                 }
                 updatePortfolio();
@@ -291,7 +397,6 @@
             }, 300);
         }
 
-        // Contact button effect
         const contactBtn = document.querySelector('.contact-btn');
         contactBtn.addEventListener('click', () => {
             contactBtn.style.transform = 'scale(0.95)';
