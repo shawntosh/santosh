@@ -1,88 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="PdSA5ud60OOgZNnKAyXkZcYPwk8kBeTLOQRzQEUlav8" />
-    <title>Santosh Bhusal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
     <style>
         body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(45deg, #ff85a2, #ff3366);
+            font-family: Arial, sans-serif;
             margin: 0;
-        }
-        .proposal-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
-            margin: 20px;
-            padding: 2rem;
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
-        .bio-container {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 700px;
-            width: 100%;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .bio-container h2 {
-            font-size: 2rem;
+            padding: 0;
+            background-color: #f4f4f4;
             color: #333;
         }
-        .bio-container p {
-            font-size: 1.25rem;
-            color: #555;
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
         }
-        .btn-visit {
-            background: linear-gradient(45deg, #6f42c1, #8c63d6);
-            color: white;
-            border-radius: 50px;
-            padding: 0.75rem 2rem;
-            transition: transform 0.3s;
+        header h1 {
+            margin: 0;
         }
-        .btn-visit:hover {
-            transform: scale(1.1);
-            color: white;
+        nav {
+            margin: 20px 0;
+            text-align: center;
         }
-        @media (max-width: 768px) {
-            body {
-                align-items: flex-start;
-                padding-top: 20px;
-            }
-            .proposal-container, .bio-container {
-                width: 95%;
-                padding: 2rem !important;
-            }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #007BFF;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .project, .interest {
+            margin-bottom: 20px;
+        }
+        .project h3, .interest h3 {
+            margin: 0;
+            color: #333;
+        }
+        .project p, .interest p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-
-<div class="container proposal-container">
-    <h1 class="display-4 mb-4">Welcome to My Personal Website!</h1>
-    <p class="h3">Hi, I'm Santosh Bhusal, a passionate software developer, football enthusiast, and music lover.</p>
-    <p class="lead mt-3">I'm constantly working on projects that fuel my passion for technology, sports, and art.</p>
-    <a href="https://www.linkedin.com/in/santosh-bhusal" target="_blank" class="btn btn-visit btn-lg mt-3">
-        Visit my LinkedIn Profile
-    </a>
-</div>
-
-<div class="container bio-container">
-    <h2>About Me</h2>
-    <p>I am a Software Developer with expertise in modern web technologies and a passion for creating efficient and innovative solutions.</p>
-    <p>When I’m not coding, you can find me on the football field or listening to music that inspires me. I love exploring new technologies and staying up-to-date with the latest trends in the tech industry.</p>
-    <p>Feel free to reach out if you want to collaborate or discuss tech, football, or music!</p>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a passionate software developer with a love for football and music. I enjoy building innovative solutions and exploring new technologies. When I'm not coding, you can find me on the football field or listening to my favorite tunes.</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1: Personal Blog</h3>
+            <p>A fully responsive personal blog built using HTML, CSS, and JavaScript. It features a clean design and easy navigation.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2: Football Stats Tracker</h3>
+            <p>An application that tracks football statistics for local teams. Built with React and Node.js.</p>
+        </div>
+        <div class="project">
+            <h3>Project 3: Music Playlist Generator</h3>
+            <p>A web app that generates music playlists based on user preferences. Developed using Python and Flask.</p>
+        </div>
+    </section>
+    <section id="interests">
+        <h2>Interests</h2>
+        <div class="interest">
+            <h3>Football</h3>
+            <p>I'm an avid football fan and enjoy playing and watching matches. My favorite team is [Your Favorite Team].</p>
+        </div>
+        <div class="interest">
+            <h3>Music</h3>
+            <p>Music is a big part of my life. I love listening to various genres and playing the guitar in my free time.</p>
+        </div>
+        <div class="interest">
+            <h3>Technology</h3>
+            <p>I'm always excited about the latest tech trends and enjoy learning new programming languages and frameworks.</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch, feel free to reach out via email at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+    </footer>
 </body>
 </html>
