@@ -1,0 +1,125 @@
+{
+  "personal": {
+    "name": "Shawntos Bhusal",
+    "title": "Software Engineer",
+    "greeting": "Hello, I'm",
+    "tagline": "SRE, DevOps, full-stack developer",
+    "specializations": ["Python", "Docker", "Kubernetes", "Java", "Angular","React", "CI/CD","Grafana","App-Dynamics"],
+    "email": "shawntosh999@gmail.com",
+    "github": "https://github.com/shawntosh",
+    "linkedin": "https://www.linkedin.com/in/shantos-bhusal-47509a187/",
+    "instagram": "https://www.instagram.com/shawntosbhusal/",
+    "location": "Available for Remote Work",
+    "availability": "Open to morning opportunities",
+    "copyright": "© 2025 Shawntos Bhusal. All rights reserved."
+  },
+  "navigation": [
+    { "name": "About", "href": "#about" },
+    { "name": "Skills", "href": "#skills" },
+    { "name": "Experience", "href": "#experience" },
+    { "name": "Projects", "href": "#projects" },
+    { "name": "Contact", "href": "#contact" }
+  ],
+  "about": {
+    "sectionTitle": "About Me",
+    "heading": "Building real-world business solutions",
+    "paragraphs": [
+      "Hello! I'm a passionate Software Engineer and DevOps enthusiast, currently working as an SRE (Site Reliability Engineer). Hailing from Dang, Deukhuri, I combine a deep love for coding, systems reliability, and automation with a creative spirit fueled by football and music. I strive to build scalable, efficient, and resilient systems that bridge development and operations seamlessly."
+    ],
+    "highlights": ["scalable solutions", "practical problem-solving"],
+    "stats": [
+      { "value": "5+", "label": "Years Experience" },
+      { "value": "10+", "label": "Projects" },
+      { "value": "10+", "label": "Technologies" }
+    ]
+  },
+  "skills": {
+    "sectionTitle": "Skills",
+    "heading": "Technologies I Work With",
+    "categories": [
+      {
+        "title": "DevOps & SRE",
+        "skills": [
+          "Docker & Kubernetes",
+          "Python",
+          "CI/CD Pipelines, GitHub Actions, Jenkins, GitLab CI",
+          "Ansible & Terraform, ",
+          "Monitoring & Logging (Prometheus, Grafana, ELK Stack)"
+        ]
+      },
+      {
+        "title": "Full-Stack Development",
+        "skills": ["Java", "Spring Boot", "Angular", "JavaScript", "Python"]
+      },
+      {
+        "title": "Frontend",
+        "skills": ["Angular", "TypeScript", "Responsive Design", "UI/UX Implementation"]
+      },
+      {
+        "title": "Databases & Tools",
+        "skills": ["MySQL / MariaDB", "MongoDB", "Git", "Postman", "Windows & Linux" ]
+      }
+    ]
+  },
+  "experience": {
+    "sectionTitle": "Experience",
+    "heading": "My Professional Journey",
+    "items": [
+      {
+        "type": "work",
+        "title": "Software Engineer",
+        "company": "Private Company",
+        "period": "Present",
+        "description": [
+          "Implementing SRE best practices to enhance system reliability and performance.",
+          "Monitoring system health and performance using Prometheus and Grafana, ensuring high availability.",
+          "Collaborating with cross-functional teams to identify and resolve technical challenges efficiently.",
+          "Participating in code reviews and knowledge-sharing sessions to foster a culture of continuous learning.",
+          "Staying updated with the latest industry trends and technologies to drive innovation within the team."
+        ]
+      },
+      {
+        "type": "education",
+        "title": "Computer Science Student",
+        "company": "Tribhuvan University",
+        "period": "Graduated",
+        "description": ["Studying computer science fundamentals", "Building practical projects alongside coursework"]
+      }
+    ]
+  },
+  "projects": {
+    "sectionTitle": "Projects",
+    "heading": "Featured Work",
+    "items": [
+      {
+        "title": "SRE-Monitoring-Stack",
+        "description": "A containerized observability pipeline that uses HAProxy for load balancing, Prometheus to scrape and store performance metrics via the HAProxy Exporter, and Grafana to visualize real-time health, traffic, and error data.",
+        "tags": ["Python", "Docker", "Grafana", "Prometheus", "HAProxy"],
+         "featured": true,
+        "github": "#",
+        "demo": "#"
+      },
+      {
+        "title": "e-Sewa Stores",
+        "description": "A full-stack e-commerce application featuring an Angular frontend for a dynamic user interface and a Java (Spring Boot) backend, integrated with the eSewa SDK/API to handle secure digital payments, transaction verification, and order lifecycle management.",
+        "tags": ["Java", "Angular", "Typescript", "Spring Boot"],
+        "featured": true,
+        "github": "#",
+        "demo": "#"
+      },
+      {
+        "title": "Blue-Green-FastApi-Dev",
+        "description": "A blue-green deployment strategy for FastAPI applications using Docker and Nginx. This setup allows seamless switching between two identical production environments (blue and green) to minimize downtime during updates, ensuring high availability and reliability.",
+        "tags": ["Python", "Docker", "Nginx", "FastAPI"],
+        "featured": true,
+        "github": "#",
+        "demo": "#"
+      }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Contact",
+    "heading": "Let's Work Together",
+    "description": "I'm currently open to freelance and contract-based work. If you have a project in mind, let's talk!"
+  }
+}
