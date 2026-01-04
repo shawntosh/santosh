@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export', // Required for GitHub Pages deployment
   typescript: {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: true, // Required for static exports on GitHub Pages
   },
   // Performance optimizations
   compiler: {
