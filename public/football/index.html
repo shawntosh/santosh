@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FootballIQ — The Ultimate Football Intelligence Hub</title>
+  <meta name="description" content="The ultimate football prediction app covering Premier League, La Liga, Champions League, Bundesliga, and Ligue 1 with real data, predictions, news, live streaming, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+  <script type="module" crossorigin src="/football/assets/index-DfZcjIt1.js"></script>
+  <link rel="modulepreload" crossorigin href="/football/assets/news-data-nAq92Uvw.js">
+  <link rel="modulepreload" crossorigin href="/football/assets/fixtures-data-NFSFzUxN.js">
+  <link rel="stylesheet" crossorigin href="/football/assets/index-C4AinT7y.css">
+</head>
+<body>
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">⚽</span>
+        <span class="logo-text">Football<span class="logo-accent">IQ</span></span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link active" data-page="dashboard"><span class="nav-icon">🏠</span><span class="nav-label">Dashboard</span></a></li>
+      <li><a href="/news" class="nav-link" data-page="news"><span class="nav-icon">📰</span><span class="nav-label">News</span></a></li>
+      <li><a href="/fixtures" class="nav-link" data-page="fixtures"><span class="nav-icon">📅</span><span class="nav-label">Fixtures & H2H</span></a></li>
+      <li><a href="/predictions" class="nav-link" data-page="predictions"><span class="nav-icon">🔮</span><span class="nav-label">Predictions</span></a></li>
+      <li><a href="/standings" class="nav-link" data-page="standings"><span class="nav-icon">📊</span><span class="nav-label">Standings</span></a></li>
+      <li><a href="/clubs" class="nav-link" data-page="clubs"><span class="nav-icon">🏟️</span><span class="nav-label">Clubs</span></a></li>
+      <li><a href="/players" class="nav-link" data-page="players"><span class="nav-icon">👤</span><span class="nav-label">Players</span></a></li>
+      <li><a href="/transfers" class="nav-link" data-page="transfers"><span class="nav-icon">🔄</span><span class="nav-label">Transfers</span></a></li>
+      <li><a href="/streaming" class="nav-link" data-page="streaming"><span class="nav-icon">📺</span><span class="nav-label">Live TV</span></a></li>
+      <li><a href="/facts" class="nav-link" data-page="facts"><span class="nav-icon">📖</span><span class="nav-label">Facts & History</span></a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <button id="theme-toggle" class="theme-toggle">
+        <span class="theme-toggle-icon" id="theme-icon">🌙</span>
+        <span id="theme-label">Dark Mode</span>
+      </button>
+    </div>
+  </nav>
+
+  <nav id="mobile-nav" class="mobile-nav">
+    <a href="/" class="mobile-nav-link active" data-page="dashboard"><span>🏠</span><span>Home</span></a>
+    <a href="/news" class="mobile-nav-link" data-page="news"><span>📰</span><span>News</span></a>
+    <a href="/fixtures" class="mobile-nav-link" data-page="fixtures"><span>📅</span><span>Fixtures</span></a>
+    <a href="/predictions" class="mobile-nav-link" data-page="predictions"><span>🔮</span><span>Predict</span></a>
+    <a href="/clubs" class="mobile-nav-link" data-page="clubs"><span>🏟️</span><span>Clubs</span></a>
+    <a href="/players" class="mobile-nav-link" data-page="players"><span>👤</span><span>Players</span></a>
+    <a href="/streaming" class="mobile-nav-link" data-page="streaming"><span>📺</span><span>Live TV</span></a>
+    <a href="/standings" class="mobile-nav-link" data-page="standings"><span>📊</span><span>More</span></a>
+  </nav>
+
+  <div id="three-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
+  <main id="app" class="main-content" style="position: relative; z-index: 1;"></main>
+</body>
+</html>
